@@ -1,0 +1,136 @@
+.sticky {
+	display: block;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin-top: $space-xl;
+}
+
+.entry-meta {
+	display: flex;
+
+	@include breakpoint(mobile) {
+		@include center-block;
+	}
+
+	> div {
+		padding: $space-xxs $space__unit;
+
+		svg {
+			margin-right: $space-xxs;
+		}
+	}	
+}
+.single-agenda .entry-meta {
+
+	> div {
+		padding: $space__unit $space-sm 0 0;
+
+		svg {
+			margin-right: $space-xxs;
+			fill: $color__primary;
+		}
+	}
+
+}
+
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.wp-block-embed {
+	margin-top: 0;
+}
+
+
+.grid-blog .format-video {
+	//flex-basis: 66.666%;
+	//max-width: 66.666%;
+}
+
+#section-filters{
+	.filters-bar {
+		border-bottom: 1px solid $color__gray;
+		
+	}
+
+	@include breakpoint(tablet) {
+        .container.dflex {
+			flex-direction: column;
+		}
+
+		.alvaro {
+			transform: translateX(-380px);
+			position: fixed;
+			transition: all .3s ease;
+			flex-direction: column;
+			display: flex;
+		}
+
+		button {
+			justify-content: space-between;
+		}
+    }
+
+	.filter-by {
+		padding: $space__unit $space-sm $space__unit 0;
+		border-right: 1px solid $color__gray;
+		font-weight: bold;
+		border-radius: 0;
+		background-color: $color__white;
+	}
+	.dropdown{
+		padding: $space__unit $space-sm;
+		border-right: 1px solid $color__gray;
+		text-transform: uppercase;
+		font-weight: bold;
+		border-radius: 0;
+		background-color: $color__white;
+		transition: all 0.3s ease;
+		
+		
+		@include breakpoint(tablet) {
+			border-left: 1px solid $color__gray;
+			border-bottom: 0;
+			border-top: 1px solid $color__gray;
+			padding: $space__unit $space-xxs $space__unit $space__unit;
+		}
+
+		&:hover, &.active {
+			background-color: $color__ligth;
+			color: $color__primary;
+			cursor: pointer;
+		}
+
+		&.active {
+			span {
+				transform: rotate(180deg);
+				transition: all 0.3s ease;
+			} 
+		}
+
+		span {
+			//margin-left: $space-sm;
+			transform: rotate(0deg);
+		}
+	}
+
+	.filters-wrapper {
+		.categories, .tags{
+			display: none;
+			overflow: hidden;
+		}
+		
+	}
+	
+} 
+
+
