@@ -11,22 +11,40 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'impande' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'impande' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
+	<footer id="colophon" class="site-footer bg-primary">
+
+		<div class="container">
+			<div class="row mt-2 mb-2">
+				<div class="col-xs-12 col-md-3 pt-2">
+					<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer-Logo')) : ?>
+					<?php endif; ?>
+					<div>
+						<ul class="social">
+							<li><a href="" rel="nofollow">FB</a></li>
+							<li><a href="" rel="nofollow">FB</a></li>
+							<li><a href="" rel="nofollow">FB</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4 pt-2">
+					<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer-1')) : ?>
+					<?php endif; ?>
+				</div>
+				<div class="col-xs-12 col-md-5 pt-2">
+					<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer-2')) : ?>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+
+		<div class="site-info bg-primary-dark dflex center-xs">
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'impande' ), 'impande', '<a href="https://www.alvarorubioc.com">Alvaro Rubioc</a>' );
+				printf( esc_html__( 'Desarrollado por: &nbsp; %2$s.' ), 'impande', '<a href="https://www.alvarorubioc.com">Alvaro Rubioc</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 

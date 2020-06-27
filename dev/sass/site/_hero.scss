@@ -1,49 +1,49 @@
 #hero {
-    background-color: $color__gray;
+    position: relative;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
-    .hero-link {
-        font-weight: bold;
-        padding-right: $space-sm;
+    @include breakpoint(xsmobile) {
+        height: 100%;
+    }
+
+    .btn-scroll-down {
+        width: 48px;
+        height: 48px;
+        display: block;
+        border-radius: 100%;
+        position: absolute;
+        bottom: -24px;
+        left: calc(50% - 24px);
+        background-color: $color__secondary;
+
+        &:hover {
+            background-color: $color__primary;
+        }
+
+        &::after {
+            content:"\25be";   /* The code for the arrow : see the reference */
+            display: block;
+            color: white;
+            font-weight: bold;
+            font-size: 30px; /* Adjust for your needs */
+            text-align: center;
+        }
+
+
     }
 
     .entry-title {
-        padding: $space-xl 0;
-    }
-    .img-hero {
-        position: relative;
-
-        img {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            @include breakpoint(mobile) {
-                position: relative;
-                margin-bottom: -6px;
-            }
+        padding: $space-xxxl 0 0;
+        @include breakpoint(xsmobile) {
+            padding: $space-xl 0 0;
         }
-    }
-}
-
-.single #hero, .page-child #hero{
-    background-color: $color__ligth;
-}
-
-.divider {
-    height: $space-xxs;
-    background-color: $color__primary;
-    max-width: 168px;
-    margin-bottom: $space-md;
-    margin-top: $space-sm;
-
-}
-
-.page-template-promo-landing #hero {
-    background-color: $color__primary;
-    color: $color__white;
-
-    .divider {
-        background-color: $color__white;
+        
     }
 
-    a:hover { color: $color__white; }
+    .entry-exceprt {
+        font-weight: bold;
+    }
 }

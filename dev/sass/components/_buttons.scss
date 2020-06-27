@@ -43,7 +43,7 @@ a.btn--primary, .btn--primary {
 
 a.btn--secondary, .btn--secondary {
 	background-color: $color__secondary;
-	color: $color__white;
+	color: $color__text-main;
 	@include fontSmooth;
 	
 	&:hover {

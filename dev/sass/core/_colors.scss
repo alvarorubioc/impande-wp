@@ -2,13 +2,23 @@
 .bg-primary {
     background-color: $color__primary;
     color: $color__white;
-    a {color: $color__white;}
+    a {
+        color: $color__white;
+        &:hover {
+            color: $color__secondary;
+        }
+    }
 }
 
 .bg-primary-dark {
     background-color: $color__primary-dark;
     color: $color__white;
-    a {color: $color__white;}
+    a {
+        color: $color__white;
+        &:hover {
+            color: $color__secondary;
+        }
+    }
 }
 
 .bg-secondary {

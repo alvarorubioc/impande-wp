@@ -39,48 +39,48 @@ input[type="submit"] {
 	font-size: 100%;
 }
 
-// Search form
-.search-form {
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;       /* Remove default arrow */
+	border: solid 1px #949ba5;
+	border-radius: $border__radius;
+	padding: calc(.5 * 1rem);
+	width: 100%;
+	background-color: #fff;
 	position: relative;
-	input[type="search"] {
-		background-color: $color__gray;
-		border: solid 1px $color__gray;
-	}
-
-	input[type="submit"] {
-		position: absolute;
-		right: 8px;
-		top: calc(50% - .75em);
-		display: block;
-		text-indent: -9999px;
-		width: 24px;
-		height: 24px;
-		background: url(./assets/img/magnifying-glass.svg);
-		background-size: auto 100%;
-	}
+	background-image: url(./assets/img/select-arrow.png);
+    background-position: 95% center;
+    background-repeat: no-repeat;
 	
 }
+
 
 
 // styles for contanct form 7
+#hero {
 
-span.wpcf7-not-valid-tip {
-    color: white;
-    font-size: 1em;
-    font-weight: normal;
-    display: block;
-}
-
-span.wpcf7-list-item {
-    display: inline-block;
-	margin: 0;
+	span.wpcf7-not-valid-tip {
+		color: white;
+		font-size: 1em;
+		font-weight: normal;
+		display: block;
+	}
 	
-}
-
-.wpcf7-list-item-label {
-	padding-left: .25em;
-}
-div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
-	border: 2px solid $color__warning;
-	border-radius: $space__unit;
+	span.wpcf7-list-item {
+		display: inline-block;
+		margin: 0;
+		
+	}
+	
+	.wpcf7-list-item-label {
+		padding-left: .25em;
+	}
+	div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
+		background-color: $color__error;
+		
+	}
+	div.wpcf7-mail-sent-ok {
+		background-color: $color__success;
+	}
 }

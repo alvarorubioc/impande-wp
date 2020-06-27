@@ -104,6 +104,10 @@ if ( ! function_exists( 'impande_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'impande_setup' );
 
+
+// Add excerpt to pages
+add_post_type_support( 'page', 'excerpt' );
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -120,44 +124,37 @@ function impande_content_width() {
 add_action( 'after_setup_theme', 'impande_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ * Add inline css editor width
  */
-function impande_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'impande' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'impande' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+add_action('admin_head', 'editor_full_width_gutenberg');
+
+function editor_full_width_gutenberg() {
+  echo '<style>
+    body.gutenberg-editor-page .editor-post-title__block, body.gutenberg-editor-page .editor-default-block-appender, body.gutenberg-editor-page .editor-block-list__block {
+		max-width: none !important;
+	}
+    .block-editor__container .wp-block {
+        max-width: none !important;
+    }
+  </style>';
 }
-add_action( 'widgets_init', 'impande_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Register widget area.
  */
-function impande_scripts() {
-	wp_enqueue_style( 'impande-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'impande-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'impande-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'impande_scripts' );
+require get_template_directory() . '/inc/widgets.php';
 
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+
+/**
+ * Enqueue Scripts and styles.
+ */
+require get_template_directory() . '/inc/enqueue-scripts.php';
 
 /**
  * Custom template tags for this theme.
@@ -174,10 +171,4 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
 

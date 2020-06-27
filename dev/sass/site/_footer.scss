@@ -1,31 +1,11 @@
 .site-footer {
-    background-color: $color__gray;
-    padding-top: $space-md;
-    border-top: 8px solid $color__primary;
+    padding-top: $space__unit;
 
     address {
         font-style: normal;
     }
-    hr {
-        background-color: $color__gray-dark;
-    }
  }
 
-.footer-top {
-    padding-bottom: $space__unit;
-     a {
-        font-weight: bold;
-        color: $color__text-main;
-     
-        &:hover{
-            color: $color__primary;
-        }
-    }
-}
-
-.footer-middle {
-    padding: $space-sm 0 $space-sm 0;
-}
 
 ul.social {
     display: flex;
@@ -39,7 +19,7 @@ ul.social {
             margin-right: 0;
         }
         a {
-            background-color: $color__gray-dark;
+            background-color: $color__secondary;
             width: 3rem;
             height: 3rem;
             align-items: center;
@@ -47,17 +27,14 @@ ul.social {
             display: flex;
             
             &:hover {
-                background-color: $color__primary;
+                background-color: $color__primary-dark;
                 color: $color__white;
             }
         }    
     }
 }
 
-.footer-bottom {
-    padding-top: $space-sm;
-}
-
 .site-info {
-    border-top: 1px solid $color__gray-dark;
+    padding: $space-xxs 0;
+    font-size: 80%;
 }

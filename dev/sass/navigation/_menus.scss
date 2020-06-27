@@ -1,46 +1,15 @@
-.site-header{
-	padding-top: $space-xxs;
-}
+#top-bar {
+	padding: $space-xxs 0;
 
-.site-search {
-	@include breakpoint(mobile) {
-		display: none;
-	}
-}
-
-
-#top-menu {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: space-between;
-	li {
-		list-style: none;
-		position: relative;
-		a {
-			color: $color__text-main;
-			display: flex;
-			&:hover {
-				color: $color__link-hover;
-			}
-
-			svg {
-				margin-right: $space-xxs;
-				fill: $color__primary;
-				@include breakpoint(mobile) {
-					width: $space-sm;
-					height: $space-sm;
-				}
-			}
-
-			span {
-				@include breakpoint(mobile) {
-					font-size: 0;
-					text-indent: -99999px
-				}
-			}
+	.top-bar__telf {
+		padding-right: $space-xs;
+		@include breakpoint(xsmobile) {
+			padding-right: 0;
 		}
 	}
+}
+.site-branding {
+	padding: $space-xs 0;
 }
 
 
@@ -68,8 +37,6 @@
 		padding-left: 0;
 		@include breakpoint(mobile) {
 			display: block;
-			
-
 		}
 
 		ul {
