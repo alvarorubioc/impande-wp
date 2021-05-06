@@ -1,0 +1,166 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__white; /* Fallback for when there is no custom background color defined. */
+}
+
+hr {
+	background-color: $color__ligth;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+.bagde {
+	display: inline-block;
+	vertical-align: middle;
+	padding: .25rem 1rem;
+	color: #fff;
+	border-radius: $border__radius;
+	background-color: $color__primary-dark;
+	font-size: 80%;
+}
+a.bagde {
+	margin: 0 $space-xxs $space-xxs 0;
+	cursor: pointer;
+	color: $color__white;
+	&:hover{
+		background-color: $color__secondary;
+		color: $color__white;
+	}
+}
+
+.divider {
+    height: $space-xxs;
+    background-color: $color__primary;
+    max-width: 168px;
+    margin-bottom: $space-md;
+    margin-top: $space-sm;
+}
+
+
+/* Android 2.3 :checked fix */
+@keyframes fake {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+body {        
+    animation: fake 1s infinite;
+}
+
+.worko-tabs {
+  
+    .state{
+      position: absolute;
+      left: -10000px;
+    }
+  
+    .flex-tabs{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+        
+        .tab{
+          flex-grow: 1;
+          h2 {
+			  text-align: center;
+			  margin-bottom: 0;}
+        }
+      
+        .panel {
+          min-height: 300px;
+          display: none;
+          width: 100%;
+          flex-basis: auto;
+      }
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 10px;
+      vertical-align: top;
+      cursor: hand;
+      cursor: pointer;
+      border-bottom: 2px solid #ccc;
+      
+        &:hover{
+          color: $color__primary;
+        }
+    }  
+}
+
+#tab-one:checked ~ .tabs #tab-one-label,
+#tab-two:checked ~ .tabs #tab-two-label,
+#tab-three:checked ~ .tabs #tab-three-label,
+#tab-four:checked ~ .tabs #tab-four-label{
+    cursor: default;
+	border-bottom-color: $color__secondary;
+	color: $color__primary;
+}
+
+#tab-one:checked ~ .tabs #tab-one-panel,
+#tab-two:checked ~ .tabs #tab-two-panel,
+#tab-three:checked ~ .tabs #tab-three-panel,
+#tab-four:checked ~ .tabs #tab-four-panel{
+    display: flex;
+}
+
+@media (max-width: 600px){
+  .flex-tabs{
+    flex-direction: column;
+    
+    .tab{
+      border-bottom: 1px solid #ccc;
+      
+        &:last-of-type{
+          border-bottom: none;
+        }
+    }
+    
+    #tab-one-label{order:1;}
+    #tab-two-label{order: 3;}
+    #tab-three-label{order: 5;};
+    #tab-four-label{order: 7;};
+    #tab-one-panel{order: 2;}
+    #tab-two-panel{order: 4;}
+    #tab-three-panel{order: 6;}
+    #tab-four-panel{ order: 8;}
+  }
+  
+    #tab-one:checked ~ .tabs #tab-one-label,
+    #tab-two:checked ~ .tabs #tab-two-label,
+    #tab-three:checked ~ .tabs #tab-three-label,
+    #tab-four:checked ~ .tabs #tab-four-label{
+      border-bottom: none;
+    }
+  
+  #tab-one:checked ~ .tabs #tab-one-panel,
+  #tab-two:checked ~ .tabs #tab-two-panel,
+  #tab-three:checked ~ .tabs #tab-three-panel,
+  #tab-four:checked ~ .tabs #tab-four-panel{
+	border-bottom: 1px solid #ccc;
+	display: block;
+  }
+}

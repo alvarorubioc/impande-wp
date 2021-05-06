@@ -1,0 +1,58 @@
+.cta-form {
+    background-color: $color__white;
+    padding: 2em;
+    color: $color__text-main;
+    box-shadow: 0 15px 35px 0 rgba(139,141,142,0.30);
+}
+
+
+
+.site-footer {
+    padding-top: $space__unit;
+
+    address {
+        font-style: normal;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            padding: 0 0 .5em 0;
+        }
+    }
+ }
+
+
+ul.social {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        margin-right: $space-xs;
+        &:last-child {
+            margin-right: 0;
+        }
+        a {
+            background-color: $color__secondary;
+            width: 3rem;
+            height: 3rem;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            
+            &:hover {
+                background-color: $color__white;
+                color: $color__secondary;
+            }
+        }    
+    }
+}
+
+.site-info {
+    padding: $space-xxs 0;
+    font-size: 80%;
+}

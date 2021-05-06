@@ -1,0 +1,95 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@include button;
+	padding: 0 $space-sm;
+	height: 40px;
+} 
+
+
+a.btn, .btn {
+	@include button;
+	text-transform: uppercase;
+    padding: 0.65rem $space-xs;
+
+	&.with--arrow {
+		background-image: url("https://daks2k3a4ib2z.cloudfront.net/535247a0560e86a20500080c/53498e45ba1095344a0005fa_arrow-right.svg");
+    	background-position: 110% 50%;
+    	background-size: auto 20%;
+    	background-repeat: no-repeat;
+
+		&:hover {
+			background-position: 90% 50%;
+			padding-left: $space-lg;
+			padding-right: $space-lg;
+		}
+	}
+
+	.icon {
+		margin-left: $space__unit;
+	}
+
+}
+
+a.btn--primary, .btn--primary {
+	@include btn(primary__fill);
+}
+
+a.btn--secondary, .btn--secondary {
+	@include btn(secondary__fill);
+}
+
+a.btn--white, .btn--white {
+	@include btn(white__fill);
+}
+
+/* feedback */
+.btn[disabled] {
+	cursor: not-allowed;
+	background-color: $color__gray;
+	color: $color__white;
+	box-shadow: none;
+	opacity: 0.6;
+
+	&:visited {
+		color: var(--btn-disabled-label);
+	}
+}
+
+/* button size */
+.a.btn--sm, .btn--sm {
+	height: $space-sm;
+	@include font-size(.8);
+}
+
+a.btn--lg, .btn--lg {
+	padding: $space-xs $space-md;
+	height: $space-lg;
+}
+
+.btn--full {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+/* buttons group */
+.btn--group {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: calc(-1 * $space-xxs);
+
+	> * {
+		margin-right: $space-xxs;
+		margin-bottom: $space-xxs;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+
+.link-ofuscado:hover{
+	cursor: pointer;
+}

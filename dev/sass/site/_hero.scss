@@ -1,0 +1,66 @@
+#hero {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 48px;
+
+    @include breakpoint(xsmobile) {
+        height: 100%;
+        margin: 48px 24px;
+		.dflex {
+			flex-direction: column;
+		}
+    }
+
+    .page & {
+        height: auto;
+    }
+
+    .home & {
+        height: 75vh;
+        clip-path: polygon(0px 0px, 100% 0px, 100% 85%, 50% 85%, 50% 100%, 0px 100%);
+    }
+
+    .btn-scroll-down {
+        width: 48px;
+        height: 48px;
+        display: block;
+        border-radius: 100%;
+        position: absolute;
+        bottom: -24px;
+        left: calc(50% - 24px);
+        background-color: $color__secondary;
+
+        &:hover {
+            background-color: $color__primary;
+        }
+
+        &::after {
+            content:"\25be";   /* The code for the arrow : see the reference */
+            display: block;
+            color: white;
+            font-weight: bold;
+            font-size: 30px; /* Adjust for your needs */
+            text-align: center;
+        }
+    }
+
+    .entry-title {
+        padding: $space-xxl 0 0;
+        @include breakpoint(xsmobile) {
+            padding: $space-xl 0 0;
+        }
+        
+    }
+
+    .entry-exceprt {
+        font-weight: bold;
+    }
+}
+
+.bg-hero {
+    background: url(assets/img/bg.png) no-repeat left top fixed;
+    display: flow-root;
+}
+
